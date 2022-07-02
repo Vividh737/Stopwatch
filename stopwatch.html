@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			body{
+				background-color: #ffa6c1;
+			}
+			#stopwatch{
+				color: #000000;
+				justify-content: center;
+				display: flex;
+				font: small-caps;
+				font-size: 50px;
+			}
+			#start{
+				height: 50px;
+				width: 100px;
+				border: solid 2px;
+				color: black;
+				padding: 10px;
+				margin: 10px;
+				justify-content: center ;
+     			font-size: 20px;
+
+			}
+			#stop{
+				height: 50px;
+				width: 100px;
+				border:solid  2px;
+				color: black;
+				padding: 10px;
+				margin: 10px;
+				font-size: 20px;
+
+			}
+			#reset{
+				height: 50px;
+				width: 100px;
+				border:solid  2px;
+				color: black;
+				padding: 10px;
+				margin: 10px;
+				font-size: 20px;
+
+			}
+			#n1{
+				font-size: 30px;
+			}
+			#n2{
+				font-size: 30px;
+			}
+			#n3{
+				font-size: 30px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var h=0	;
+			var m=0;
+			var s=0;
+			var timer = 0;
+
+
+
+
+
+
+
+
+
+
+			function start(){
+				timer = 1;
+				stopwatch();
+			}
+			function stop(){
+				timer = 0;
+			}
+			function reset(){
+				timer = 0;
+				document.getElementById('n1').innerHTML = "0" + 0;
+				document.getElementById('n2').innerHTML = "0" + 0;
+				document.getElementById('n3').innerHTML = "0" + 0;
+				h="0"+0;
+				m="0"+0;
+				s="0"+0;
+				
+			}
+
+			function stopwatch(){
+				if(timer == 1){
+					s++;
+					if(s==60){
+						m++;
+						s=0;
+					}
+					if(m==60){
+							h++;
+							m=0;
+					}
+					document.getElementById('n1').innerHTML = h;
+					document.getElementById('n2').innerHTML = m;
+					document.getElementById('n3').innerHTML = s;
+					setTimeout("stopwatch()",1000);
+				}
+			}
+
+		</script>
+		<p id="stopwatch"> STOPWATCH</p>
+		<p id="number">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<p id="n1">00</p>
+			<p id="n2">00</p>
+			<p id="n3">00</p>
+		</p>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<button id="start" onclick="start()">Start</button>
+		<button id="stop" onclick="stop()">Stop</button>
+		<button id="reset" onclick="reset()">Reset</button>
+
+	</body>
+</html>
